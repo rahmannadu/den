@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Instructions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.5;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Data Deletion Instructions</h1>
+    <p>
+      If you wish to delete your data from our systems, follow the steps below:
+    </p>
+    <p>
+      1. Click the link below to access the data deletion request form.
+    </p>
+    <p>
+      2. Fill out the required information on the form.
+    </p>
+    <p>
+      3. Submit the form to request the deletion of your data.
+    </p>
+    <p>
+      4. You will receive a confirmation email once your request is processed.
+    </p>
+    <a href="YOUR_URL_HERE" target="_blank">Request Data Deletion</a>
+  </div>
+
+</body>
+</html>
