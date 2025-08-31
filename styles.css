@@ -1,0 +1,695 @@
+:root {
+  --orange: #d35400;
+  --red: #f3370d;
+  --yellow: #f3c13a;
+  --green: #16a34a;
+  --blue: #39c3b1;
+  --ink-dark: #1a1a1a;
+  --ink-muted: #555;
+  --line: #e5e5e5;
+  --white: #ffffff;
+  --gray-bg: #f4f6f8;
+}
+
+/* === Reset & Base === */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink-dark);
+  line-height: 1.6;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Header === */
+.site-header {
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(22, 163, 74, 0.01);
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+.brand-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-right: 8px;
+}
+.brand-icon span {
+  display: block;
+  height: 3px;
+  background: var(--ink-dark);
+  border-radius: 2px;
+  transform: rotate(-27deg);
+  width: 18px;
+  margin-bottom: 2px;
+}
+.brand-icon span:nth-child(2) {
+  width: 14px;
+  margin-left: 6px;
+}
+.brand-icon span:last-child {
+  width: 18px;
+  margin-left: 12px;
+}
+.brand-name {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: var(--ink-dark);
+}
+.nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--ink-dark);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+  padding: 0 4px;
+}
+.nav a:hover,
+.nav a:focus {
+  color: var(--green);
+}
+
+/* === Main Banner, Video, Headings === */
+.main-banner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.video-dim {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.video-overlay .caption {
+  width: 80%;
+  margin: 0 auto;
+}
+.video-overlay .caption h1 {
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: #fff;
+}
+.headline-gradient {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  background: linear-gradient(90deg, #16a34a, var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.video-overlay .caption p {
+  font-size: 1.2rem;
+  margin-top: 14px;
+  color: #e9e9e9;
+}
+
+/* === Hero Buttons === */
+.main-button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.main-btn {
+  min-width: 230px;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 15px 0;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+.medical-btn {
+  background-color: var(--blue);
+  color: #fff;
+}
+.medical-btn:hover,
+.medical-btn:focus {
+  background-color: var(--green);
+  color: #fff;
+}
+.non-medical-btn {
+  background-color: var(--orange);
+  color: #fff;
+}
+.non-medical-btn:hover,
+.non-medical-btn:focus {
+  background-color: var(--red);
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .main-button-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .main-btn {
+    min-width: 85vw;
+    max-width: 375px;
+    font-size: 1rem;
+  }
+}
+
+/* === Section Headings === */
+.section {
+  padding: 64px 0 46px 0;
+  text-align: center;
+  background: var(--white);
+}
+.section.alt {
+  background: #f9f9f9;
+}
+.section h1,
+.section h2,
+.section-heading {
+  font-size: 2.15rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--ink-dark);
+  letter-spacing: -0.5px;
+}
+.section .first-word {
+  color: var(--green);
+}
+
+/* === Product Carousel Cards === */
+.product-carousel-section {
+  background: var(--gray-bg);
+  padding-top: 70px;
+}
+.carousel-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 34px;
+  color: var(--ink-dark);
+  letter-spacing: -0.5px;
+}
+.product-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 38px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) #ddd;
+}
+.product-card-large {
+  flex: 0 0 400px;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(20, 40, 40, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin-bottom: 8px;
+  color: var(--ink-dark);
+}
+.product-card-large:hover {
+  box-shadow: 0 16px 36px rgba(20, 40, 40, 0.21);
+  transform: translateY(-4px) scale(1.03);
+}
+.product-info {
+  text-align: left;
+  width: 90%;
+  margin-bottom: 28px;
+}
+#medical .product-card-large:nth-child(odd) {
+  /* background: linear-gradient(135deg, #16a34a 40%, #39c3b1 100%);*/
+  /*color: var(--white)*/
+  color: var(--ink-dark);
+  box-shadow: 0 8px 24px rgba(20, 100, 80, 0.6);
+}
+#medical .product-card-large:nth-child(even) {
+  /*background: linear-gradient(135deg, #39c3b1 40%, #16a34a 100%);*/
+  /*color: var(--white)*/
+  color: var(--ink-dark);
+  box-shadow: 0 8px 24px rgba(20, 100, 80, 0.6);
+}
+#medical .product-card-large:hover {
+  box-shadow: 0 16px 38px rgba(30, 160, 120, 0.8);
+  transform: translateY(-7px) scale(1.05);
+}
+#nonmedical .product-card-large.card-orange:nth-child(odd),
+#nonmedical .product-card-large.card-yellow:nth-child(odd),
+#nonmedical .product-card-large.card-red:nth-child(odd) {
+  /*background: linear-gradient(135deg, #d35400 40%, #f3370d 100%);*/
+  /*color: var(--white)*/
+  color: var(--ink-dark);
+  box-shadow: 0 8px 24px rgba(211, 84, 0, 0.8);
+}
+#nonmedical .product-card-large.card-orange:nth-child(even),
+#nonmedical .product-card-large.card-yellow:nth-child(even),
+#nonmedical .product-card-large.card-red:nth-child(even) {
+  /*background: linear-gradient(135deg, #f3370d 40%, #d35400 100%);*/
+  /*color: var(--white)*/
+  color: var(--ink-dark);
+  box-shadow: 0 8px 24px rgba(243, 55, 13, 0.8);
+}
+#nonmedical .product-card-large.card-orange:hover,
+#nonmedical .product-card-large.card-yellow:hover,
+#nonmedical .product-card-large.card-red:hover {
+  box-shadow: 0 16px 38px rgba(243, 55, 13, 0.95);
+  transform: translateY(-7px) scale(1.05);
+}
+.product-card-large img {
+  width: 100%;
+  max-width: 320px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  background: transparent;
+  box-shadow: none;
+  display: block;
+}
+.product-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: inherit;
+}
+.product-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: inherit;
+}
+.product-info ul li {
+  margin-bottom: 8px;
+}
+
+/* === Round Image Box for Product Cards === */
+
+.image-box {
+  width: 270px;
+  height: 270px;
+  background: #f4f6f8;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(18,90,80,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px auto 22px auto;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 95vw;        /* Prevents overflow on small screens */
+  min-width: 0;
+}
+
+.image-box img {
+  width: 100%;            /* Always fill the .image-box */
+  height: 100%;
+  object-fit: cover;      /* Image fills the circle and is always centered */
+  border-radius: 50%;
+  background: #f4f6f8;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .image-box {
+    width: 160px;
+    height: 160px;
+    aspect-ratio: 1 / 1;
+    max-width: 65vw;
+  }
+  .image-box img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-box {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    max-width: 85vw;
+  }
+}
+
+
+/* === Timeline Why Choose Us Section === */
+.why-timeline-section {
+  background: #fafbfc;
+  padding: 70px 0 60px 0;
+}
+.section-heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -1px;
+  margin-bottom: 60px;
+  color: var(--ink-dark);
+}
+.why-timeline {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  border-left: 3px solid var(--green);
+  padding-left: 38px;
+}
+.why-tile {
+  position: relative;
+  margin-bottom: 44px;
+  min-height: 48px;
+}
+.why-dot {
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0ff2;
+  border: 3px solid #fff;
+  z-index: 2;
+}
+.why-content {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(39,193,177,0.07);
+  padding: 20px 32px;
+  font-size: 1.15rem;
+  font-weight: 510;
+  color: var(--ink-dark);
+  display: block;
+  text-align: left;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.why-tile:hover .why-content {
+  box-shadow: 0 8px 32px rgba(61,195,183,0.12);
+  transform: scale(1.03);
+}
+@media (max-width: 700px) {
+  .why-timeline {
+    padding-left: 18px;
+    border-width: 2px;
+  }
+  .why-dot {
+    width: 16px; height: 16px; left: -13px;
+  }
+  .why-content {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+}
+
+/* === Contact Section === */
+.contact-us h2 {
+  text-align: left;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 64px;
+}
+.contact-method {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.contact-method strong {
+  color: var(--ink-dark);
+  font-size: 19px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.contact-method a {
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-method a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 980px) {
+  .product-card-large {
+    flex: 0 0 78vw;
+    max-width: 78vw;
+    min-width: 360px;
+  }
+  .product-card-large img {
+    height: 220px;
+    max-width: 100%;
+  }
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .why-den-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contact-details {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.main-button1 a {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #39c3b1;
+  color: white !important;   /* override blue color */
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none !important; /* override underline */
+  transition: background-color 0.3s ease;
+}
+
+.main-button1 a:hover {
+  background-color: #2a9f8e;
+  text-decoration: none!important; /* keep no underline on hover */
+  color: white; /* keep text white on hover */
+}
+
+.main-button2 a {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: var(--orange);
+  color: white !important;   /* override blue color */
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none !important; /* override underline */
+  transition: background-color 0.3s ease;
+}
+
+.main-button2 a:hover {
+  background-color: #f3370d;
+  text-decoration:  none!important;  /* keep no underline on hover */
+  color: white; /* keep text white on hover */
+}
+
+.contact-section {
+  max-width: 500px;
+  margin: 50px auto 60px auto;
+  background: #fff;
+  padding: 32px 15px 24px 15px;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(44,145,136,0.09);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: var(--ink-dark);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background: #f4f6f8;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(39,193,177,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  min-width: 230px;
+  margin-bottom: 18px;
+  flex: 1 1 180px;
+  text-align: center;   /* Ensures card content is center aligned */
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--blue);
+  background: #e9fcf8;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.contact-card a, .contact-card span {
+  color: var(--ink-dark);
+  font-size: 1.07rem;
+  text-decoration: none;
+  word-break: break-all;
+  display: block;
+  text-align: center;
+}
+
+.contact-card a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* WhatsApp Floating Icon */
+.whatsapp_float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 32px;
+  right: 32px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 34px;
+  box-shadow: 2px 2px 12px #999;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.18s, background 0.18s;
+}
+
+.whatsapp_float:hover {
+  box-shadow: 2px 4px 20px #3ada64;
+  background: #1ebea5;
+  color: #fff;
+}
+.whatsapp-icon { margin: 0 auto; }
+
+@media (max-width: 700px) {
+  .contact-section {
+    padding: 18px 7px 24px 7px;
+    border-radius: 12px;
+  }
+  .contact-cards {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .contact-card {
+    min-width: unset;
+    width: 98%;
+    padding: 13px 8px;
+  }
+  .whatsapp_float {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 12px;
+    font-size: 24px;
+  }
+}
